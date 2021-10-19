@@ -1,18 +1,28 @@
 import moment from "moment-timezone";
+import { BehaviorSubject, Subject } from "rxjs";
 import useSWR from "swr";
 import { OPEN_WEATHER_MAP_URL, WEATHER_API_KEY } from "../constants/constant";
 import fetcher from "../lib/fetcher";
+import { Weather } from "../type/weather";
+import {uniqBy} from 'lodash'
 const apiUrl = OPEN_WEATHER_MAP_URL;
 const apiKey = WEATHER_API_KEY;
+export const previousCity = new BehaviorSubject({});
+const weathers: Weather[] = []
 export default function WeatherService(type: string, location: string) {
+  // init call api
   const { data, error } = useSWR(`${apiUrl}/${type}/?q=${location}&units=metric&APPID=${apiKey}`,fetcher);
-  if (type === 'weather') {
+  if (type === 'weather') { // get weather of city
+    if (data?.weather) {
+      weathers.unshift(customResponseData(data))
+      previousCity.next({weathers: uniqBy(weathers, 'location')});
+    }
     return {
       weather: data?.weather ? customResponseData(data) : null,
       isLoading: !data && !error,
       isError: error
     };
-  } else {
+  } else { // get list forecase filter by date_time
     return {
       forecast: data?.list && Object.entries(data).length ? data.list.filter((f: any) => f.dt_txt.match(/12:00:00/)).map(customResponseData): [],
       isLoading: !data && !error,
@@ -21,8 +31,9 @@ export default function WeatherService(type: string, location: string) {
   }
 }
 
+// custom fields data response
 function customResponseData(data: any) {
-    const mapped = {
+    const mapped: Weather = {
       location: data.name,
       condition: data.cod,
       country: data.sys.country,
@@ -44,6 +55,7 @@ function customResponseData(data: any) {
       forecastIcon: data.weather[0].icon
     };
 
+    // get min - max temp
     if (data.main.temp_min && data.main.temp_max) {
         mapped.max = Math.round(data.main.temp_max);
         mapped.min = Math.round(data.main.temp_min);

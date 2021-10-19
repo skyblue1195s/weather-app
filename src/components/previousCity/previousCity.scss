@@ -1,8 +1,7 @@
 
-.group-windy {
+.group-windy-weather {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid;
 }
 span {
     color: #999;
@@ -23,4 +22,8 @@ span {
 
 .no-data {
     text-align: center
+}
+
+.card-content {
+    margin: 10px;
 }

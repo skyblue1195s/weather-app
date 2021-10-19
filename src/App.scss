@@ -65,3 +65,26 @@ h3 {
     font-weight: 400;
     font-size: 1em;
 }
+
+.history-search-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 2%;
+    .history-search {
+        margin: 0 auto;
+        margin-top: 1%;
+        font-weight: 500;
+        font-size: 22px;
+    }
+    .list-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1%;
+    }
+}
+.text-not-found {
+    text-align: center
+}

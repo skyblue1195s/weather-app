@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "react-toastify/dist/ReactToastify.css";
 import { SWRConfig } from "swr";
-import showErrorMessage from "./lib/notify";
+// import showErrorMessage from "./lib/notify";
 import { ToastContainer } from "react-toastify";
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
     value={{
       onError: error => {
         if (error) {
-          showErrorMessage(`Error: ${error.message}`);
+          // showErrorMessage(`Error: ${error.message}`);
         }
       },
       shouldRetryOnError: false
