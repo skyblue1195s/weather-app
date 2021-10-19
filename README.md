@@ -8,7 +8,7 @@ This is a weather app using API openweathermap.org, you can search and view weat
 
 In this app:
 - folder components: have all component can be reused (weather-card, forecase-card, search-city)
-- constants: have constants varable
+- constants: have constants variable
 - lib: have all export function, can be call in multi component
 - service: use to call api request
 
@@ -26,7 +26,7 @@ In this app, I used lib:
 
 - Sign up over at [openweathermap.org](https://openweathermap.org/appid) to get an API key.
 - Fork the project and clone it locally.
-- Run `yarn` to install node_modules package.
+- Run `yarn` to install node_modules packages.
 - Go to src/constants/constants.tsx and update new WEATHER_API_KEY:
 ```sh
 
