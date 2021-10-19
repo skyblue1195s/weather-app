@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useMemo, useState } from 'react';
+import './App.scss';
+import SearchCity from './components/search/searchCity';
+import WeatherCard from './components/weather/weatherCard';
+import {debounce} from 'lodash'
+import ForecastCard from './components/forecast/forecastCard';
 function App() {
+  const [location, setLocation] = useState('Can Tho');
+
+  // set delay set new location
+  const debounceSearchLocation = useMemo(() =>
+      debounce((search) => {
+        setLocation(search);
+      }, 500),
+    [],
+  );
+
+  function handlerLocationChange(search: string) {
+    if (search.length > 0) {
+      debounceSearchLocation(search)
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchCity  onLocationChange={handlerLocationChange}/>
+      <WeatherCard location={location} />
     </div>
   );
 }
