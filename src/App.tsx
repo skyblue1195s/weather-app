@@ -3,7 +3,6 @@ import './App.scss';
 import SearchCity from './components/search/searchCity';
 import WeatherCard from './components/weather/weatherCard';
 import {debounce} from 'lodash'
-import ForecastCard from './components/forecast/forecastCard';
 function App() {
   const [location, setLocation] = useState('Can Tho');
 

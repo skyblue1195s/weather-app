@@ -13,7 +13,6 @@ ReactDOM.render(
     value={{
       onError: error => {
         if (error) {
-          console.log('new errorr');
           showErrorMessage(`Error: ${error.message}`);
         }
       },

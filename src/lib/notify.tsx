@@ -1,7 +1,6 @@
 import { toast } from "react-toastify";
 
 export default async function showErrorMessage(msg: string) {
-    console.log(msg)
     toast.error(msg, {
         position: "top-right",
         autoClose: 5000,

@@ -2,9 +2,44 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description
+
+This is a weather app using API openweathermap.org, you can search and view weather of over 200,000 cities
+
+In this app:
+- folder components: have all component can be reused (weather-card, forecase-card, search-city)
+- constants: have constants varable
+- lib: have all export function, can be call in multi component
+- service: use to call api request
+
+
+In this app, I used lib:
+- SWR(React hook for data fetching), component will get a stream of data updates constantly and automatically
+- Use lodash (debounce) to set delay time call API when input change
+- Use API https://api.openweathermap.org/data/2.5 to get city weather info
+- API https://openweathermap.org/img/wn to display image weather icon
+
+
+
+
+## Getting started
+
+- Sign up over at [openweathermap.org](https://openweathermap.org/appid) to get an API key.
+- Fork the project and clone it locally.
+- Run `yarn` to install node_modules package.
+- Go to src/constants/constants.tsx and update new WEATHER_API_KEY:
+```sh
+
+OPEN_WEATHER_MAP_URL = 'https://api.openweathermap.org/data/2.5'
+WEATHER_API_KEY = The API key you obtained from openweathermap.org
+WEATHER_ICON_URL = 'https://openweathermap.org/img/wn'
+```
+
+
 ## Available Scripts
 
 In the project directory, you can run:
+
 
 ### `yarn start`
 
