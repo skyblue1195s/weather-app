@@ -10,7 +10,7 @@ type WeatherCardProps = {
 }
 
 export default function WeatherCard({ location }: WeatherCardProps) {
-  const { weather, isLoading, isError } = WeatherService('weather', location);
+  const { weather, isError } = WeatherService('weather', location);
   const weatherIcon = `${WEATHER_ICON_URL}/${weather?.icon_id}@2x.png`
   return (
     <>
