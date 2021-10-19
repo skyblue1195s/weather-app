@@ -1,5 +1,5 @@
 import moment from "moment-timezone";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import useSWR from "swr";
 import { OPEN_WEATHER_MAP_URL, WEATHER_API_KEY } from "../constants/constant";
 import fetcher from "../lib/fetcher";

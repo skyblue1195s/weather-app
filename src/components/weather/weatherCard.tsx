@@ -1,7 +1,6 @@
 import moment from "moment-timezone";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { WEATHER_ICON_URL } from "../../constants/constant";
-import { previousCity } from "../../service/weather.service";
 import { Weather } from "../../type/weather";
 import ForecastCard from "../forecast/forecastCard";
 import './weather.scss'

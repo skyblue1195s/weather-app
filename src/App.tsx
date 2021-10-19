@@ -15,6 +15,7 @@ function App() {
   // get history weather after search new location
   const fetch = useCallback(() => {
       setWeathers(previousCity.value)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location])
   
   useEffect(() => {

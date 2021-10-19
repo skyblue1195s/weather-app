@@ -14,8 +14,9 @@ In this app:
 
 
 In this app, I used lib:
-- SWR(React hook for data fetching), component will get a stream of data updates constantly and automatically
+- SWR(React hook for data fetching), component will get a stream of data updates constantly and automatically (auto fetch new weather) await 10 minutes
 - Use lodash (debounce) to set delay time call API when input change
+- Use rxjs (BehaviorSubject) to store history city
 - Use API https://api.openweathermap.org/data/2.5 to get city weather info
 - API https://openweathermap.org/img/wn to display image weather icon
 
