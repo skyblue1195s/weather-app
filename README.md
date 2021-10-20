@@ -27,7 +27,7 @@ In this app, I used lib:
 
 - Sign up over at [openweathermap.org](https://openweathermap.org/appid) to get an API key.
 - Fork the project and clone it locally.
-- Run `yarn` to install node_modules packages.
+- Run `yarn` to install packages.
 - Go to src/constants/constants.tsx and update new WEATHER_API_KEY:
 ```sh
 
