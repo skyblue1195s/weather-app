@@ -8,7 +8,7 @@ This is a weather app using API openweathermap.org, you can search and view weat
 
 In this app:
 - folder components: have all component can be reused (weather-card, forecase-card, search-city)
-- constants: have constants variable
+- constants: have constants variable (API_URL, API_KEY....)
 - lib: have all export function, can be call in multi component
 - service: use to call api request
 
