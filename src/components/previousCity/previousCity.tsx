@@ -11,7 +11,7 @@ export default function PreviousCity({weathers}: Previous) {
   return (
     <>
       {
-       weathers.slice(0, 3).map((weather: any, index: number) =>  (
+       weathers.slice(0, 2).map((weather: any, index: number) =>  (
           <div className="card card-content" key={index}>
             {
               <>
